@@ -2,3 +2,4 @@ version: "3"
 services:
   mandelbrot:
     image: yehory/mandelbrot_ascii:1.0
+    container_name: mandelbrot_container
