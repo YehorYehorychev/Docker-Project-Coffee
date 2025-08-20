@@ -7,7 +7,7 @@ services:
     ports:
       - "8080:80"
     healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://localhost/"]
+      test: ["CMD", "wget", "-q", "http://localhost/"]
       interval: 5s
       timeout: 2s
       retries: 5
@@ -17,6 +17,9 @@ services:
     image: alpine:latest
     depends_on:
       - nginx
+    working_dir: /app/output
+    volumes:
+      - ./results:/app/output
     entrypoint: ["sh","-c",
       "set -e; \
        ping -c 3 nginx && echo 'ICMP OK'; \
