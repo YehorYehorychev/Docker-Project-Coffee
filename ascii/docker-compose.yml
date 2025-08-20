@@ -1,11 +1,29 @@
 name: mandelbrot_project
 
 services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_container
+    ports:
+      - "8080:80"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost/"]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+      start_period: 2s
+
+  alpine:
+    image: alpine:latest
+    depends_on:
+      - nginx
+    entrypoint: ["sh","-c",
+      "set -e; \
+       ping -c 3 nginx && echo 'ICMP OK'; \
+       wget --spider -q http://nginx && echo 'HTTP OK'; \
+       tail -f /dev/null"
+    ]
+
   mandelbrot:
     image: yehory/mandelbrot_ascii:1.0
     container_name: mandelbrot_container
-
-  nginx:
-    image: nginx
-    ports:
-      - 8080:80
