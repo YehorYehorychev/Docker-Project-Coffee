@@ -1,0 +1,11 @@
+name: mandelbrot_project
+
+services:
+  mandelbrot:
+    image: yehory/mandelbrot_ascii:1.0
+    container_name: mandelbrot_container
+
+  nginx:
+    image: nginx
+    ports:
+      - 8080:80
