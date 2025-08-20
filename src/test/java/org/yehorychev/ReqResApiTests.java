@@ -1,8 +1,7 @@
-package demo;
+package org.yehorychev;
 
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
-import org.yehorychev.BaseTest;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
