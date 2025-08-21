@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="ReqRes API Tests" verbose="1" parallel="false">
+
+    <test name="ReqRes API Tests">
+        <packages>
+            <package name="org.yehorychev"/>
+        </packages>
+    </test>
+</suite>
