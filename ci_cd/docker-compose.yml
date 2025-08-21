@@ -1,0 +1,8 @@
+name: jenkins
+
+services:
+  nginx:
+    image: jenkins:latest
+    container_name: jenkins_container
+    ports:
+      - "8080:80"
