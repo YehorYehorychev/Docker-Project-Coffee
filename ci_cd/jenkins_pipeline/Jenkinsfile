@@ -1,11 +1,20 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image "alpine"
+        }
+    }
 
     stages {
-        stage('Hello') {
+        stage('Get google.com') {
             steps {
-                echo 'Hello World from Pipeline'
+                sh 'wget www.google.com'
             }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'index.html', followSymlinks: false
         }
     }
 }
