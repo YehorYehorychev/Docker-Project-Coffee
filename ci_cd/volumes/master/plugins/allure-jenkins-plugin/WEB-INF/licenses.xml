@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<l:dependencies xmlns:l='licenses' groupId='ru.yandex.qatools.allure' artifactId='allure-jenkins-plugin' version='2.32.0'><l:dependency name='Allure Jenkins Plugin' groupId='ru.yandex.qatools.allure' artifactId='allure-jenkins-plugin' version='2.32.0' url='https://github.com/jenkinsci/allure-plugin'><l:description>The Jenkins Plugins Parent POM Project</l:description><l:license name='The Apache Software License, Version 2.0' url='https://www.apache.org/licenses/LICENSE-2.0.txt'/></l:dependency><l:dependency name='FindBugs-Annotations' groupId='com.google.code.findbugs' artifactId='annotations' version='3.0.0' url='http://findbugs.sourceforge.net/'><l:description>Annotation supports the FindBugs tool</l:description><l:license name='GNU Lesser Public License' url='http://www.gnu.org/licenses/lgpl.html'/></l:dependency><l:dependency name='TrueZIP Driver ZIP' groupId='de.schlichtherle.truezip' artifactId='truezip-driver-zip' version='7.7.10' url='http://truezip.java.net/truezip-driver/truezip-driver-zip'><l:description>The file system driver family for ZIP and related archive file types.
+
+        Add the JAR artifact of this module to the run time class path to
+        make its file system drivers available for service location in the
+        client API modules.</l:description><l:license name='Eclipse Public License, Version 1.0' url='http://www.eclipse.org/legal/epl-v10.html'/></l:dependency><l:dependency name='TrueZIP Kernel' groupId='de.schlichtherle.truezip' artifactId='truezip-kernel' version='7.7.10' url='http://truezip.java.net/truezip-kernel'><l:description>This module implements virtual file systems from arbitrary resources,
+        manages their state and commits unsynchronized changes if required or
+        requested.
+        The TrueZIP Kernel uses file system drivers to access these resources.
+        It provides multithreading, multiplexing, caching and buffering so that
+        the file system drivers do not need to take care of this.</l:description><l:license name='Eclipse Public License, Version 1.0' url='http://www.eclipse.org/legal/epl-v10.html'/></l:dependency><l:dependency name='TrueZIP Driver FILE' groupId='de.schlichtherle.truezip' artifactId='truezip-driver-file' version='7.7.10' url='http://truezip.java.net/truezip-driver/truezip-driver-file'><l:description>The file system driver family for the FILE scheme.
+
+        Add the JAR artifact of this module to the run time class path to
+        make its file system drivers available for service location in the
+        client API modules.</l:description><l:license name='Eclipse Public License, Version 1.0' url='http://www.eclipse.org/legal/epl-v10.html'/></l:dependency><l:dependency name='TrueZIP File*' groupId='de.schlichtherle.truezip' artifactId='truezip-file' version='7.7.10' url='http://truezip.java.net/truezip-file'><l:description>This module provides the TFile* classes
+for simple, uniform, transparent, thread-safe, read/write access to archive
+files as if they were virtual directories in a file system path.
+
+This module also provides Swing GUI classes for viewing file trees
+and choosing entries in archive files.</l:description><l:license name='Eclipse Public License, Version 1.0' url='http://www.eclipse.org/legal/epl-v10.html'/></l:dependency><l:dependency name='TrueZIP Swing' groupId='de.schlichtherle.truezip' artifactId='truezip-swing' version='7.7.10' url='http://truezip.java.net/truezip-swing'><l:description>General Swing GUI classes.
+
+        This module does not depend on other TrueZIP modules.</l:description><l:license name='Eclipse Public License, Version 1.0' url='http://www.eclipse.org/legal/epl-v10.html'/></l:dependency></l:dependencies>

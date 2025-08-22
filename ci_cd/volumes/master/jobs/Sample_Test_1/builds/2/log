@@ -1,0 +1,10 @@
+Started by user [8mha:////4LEhzqDIPuOnvHgriu4p2lC9c8R1YqIbc3amM+sa+OX4AAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgZu/dLi1CL9xJTczDwAS4B5WsAAAAA=[0mYehor Yehorychev
+Running as SYSTEM
+Building remotely on [8mha:////4AzCMTyNZbaLtiP0P+PcnUXweiX4W4xGGq6xx0fR5Mo8AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgZR/eT83ILSktQi/dzE5Phck/iConx9AGnPMmvKAAAA[0mmac_m4_pro (macOS) in workspace /Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Sample_Test_1
+[Sample_Test_1] $ /bin/sh -xe /var/folders/qk/ds5pdt9n4wzgjxrdn38kg90w0000gn/T/jenkins13365186450810430690.sh
++ echo 'Hello from Sample Job 1'
+Hello from Sample Job 1
++ docker ps
+CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                                                                                          NAMES
+71b38b2aec7e   jenkins/jenkins:lts-jdk17   "/usr/bin/tini -- /u…"   34 minutes ago   Up 24 minutes   0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp, 0.0.0.0:50000->50000/tcp, [::]:50000->50000/tcp   jenkins_container
+Finished: SUCCESS

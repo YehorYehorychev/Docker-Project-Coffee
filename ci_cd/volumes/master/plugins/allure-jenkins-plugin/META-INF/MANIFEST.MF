@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: Allure Jenkins Plugin
+Specification-Version: 2.32
+Implementation-Title: Allure Jenkins Plugin
+Implementation-Version: 2.32.0
+Plugin-Class: ru.yandex.qatools.allure.jenkins.AllureReportPlugin
+Group-Id: ru.yandex.qatools.allure
+Artifact-Id: allure-jenkins-plugin
+Short-Name: allure-jenkins-plugin
+Long-Name: Allure Jenkins Plugin
+Url: https://github.com/jenkinsci/allure-plugin
+Plugin-Version: 2.32.0
+Hudson-Version: 2.387.3
+Jenkins-Version: 2.387.3
+Plugin-Dependencies: workflow-step-api:639.v6eca_cd8c04a_a_;resolution:=
+ optional,bouncycastle-api:2.29,jackson2-api:2.15.2-350.v0c2f3f8fc595,jo
+ b-dsl:1.83;resolution:=optional,matrix-project:808.v5a_b_5f56d6966;reso
+ lution:=optional,script-security:1275.v23895f409fb_d;resolution:=option
+ al,structs:325.vcb_307d2a_2782;resolution:=optional
+Plugin-Developers: Dmitry Baev:charlie:baev@qameta.io,Denis Chernilevsky
+ :dchr:dchr@yandex-team.ru,Artem Eroshenko:eroshenkoam:eroshenkoam@qamet
+ a.io,Marat Mavlyutov:mavlyutov:mavlyutov@yandex-team.ru,Ivan Kalinin:pu
+ pssman:pupssman@yandex-team.ru,Ivan Krutov:vania-pooh:vania-pooh@yandex
+ -team.ru
+Plugin-License-Name: The Apache Software License, Version 2.0
+Plugin-License-Url: https://www.apache.org/licenses/LICENSE-2.0.txt
+Plugin-ScmConnection: scm:git:https://github.com/jenkinsci/allure-plugin
+ .git
+Plugin-ScmTag: HEAD
+Plugin-ScmUrl: https://github.com/jenkinsci/allure-plugin
+Plugin-GitHash: b60af529499d58d8921bc2a270a41ca69940fb92
+Implementation-Build: b60af529499d58d8921bc2a270a41ca69940fb92
+
