@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2025-08-26 01:11:04.931 UTC</timestamp>
+  <original>
+    <name>Docker_Java_Jenkinsfile</name>
+    <number>4</number>
+  </original>
+  <md5sum>467fd9051a7ddc5a4e8e86591b0e58cf</md5sum>
+  <fileName>emailable-report.html</fileName>
+  <usages>
+    <entry>
+      <string>Docker_Java_Jenkinsfile</string>
+      <ranges>4</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>

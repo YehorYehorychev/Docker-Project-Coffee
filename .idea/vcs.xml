@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ci_cd/volumes/node/workspace/Docker_Java_From_Github" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfie" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile" vcs="Git" />
   </component>
 </project>

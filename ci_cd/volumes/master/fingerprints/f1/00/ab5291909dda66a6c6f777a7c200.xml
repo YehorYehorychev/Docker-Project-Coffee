@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2025-08-26 01:11:04.925 UTC</timestamp>
+  <original>
+    <name>Docker_Java_Jenkinsfile</name>
+    <number>4</number>
+  </original>
+  <md5sum>f100ab5291909dda66a6c6f777a7c200</md5sum>
+  <fileName>TEST-TestSuite.xml</fileName>
+  <usages>
+    <entry>
+      <string>Docker_Java_Jenkinsfile</string>
+      <ranges>4</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>
