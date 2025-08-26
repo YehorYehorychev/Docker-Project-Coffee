@@ -1,0 +1,62 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1540.v295eccc9778f">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2265.v140e610fe9d5"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2265.v140e610fe9d5">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4183.v94b_6fd39da_c1">
+    <script>pipeline {
+  agent {
+    docker {
+      image &apos;yehory/api_tests_java:2.0&apos;
+      label &apos;macOS&apos;
+      reuseNode true
+    }
+  }
+
+  options { timestamps() }
+
+  stages {
+    stage(&apos;Checkout&apos;) {
+      steps {
+        git branch: &apos;main&apos;, url: &apos;https://github.com/YehorYehorychev/Docker-Project-Coffee.git&apos;
+      }
+    }
+
+    stage(&apos;Run tests&apos;) {
+      steps {
+        sh &apos;mvn -version&apos;
+        sh &apos;mvn clean test -Dsurefire.suiteXmlFiles=testng.xml&apos;
+      }
+    }
+
+    stage(&apos;Archive &amp; Publish reports&apos;) {
+      steps {
+        junit &apos;target/surefire-reports/TEST-*.xml&apos;
+
+        archiveArtifacts artifacts: &apos;target/surefire-reports/**&apos;, fingerprint: true
+
+        publishHTML(target: [
+          reportDir: &apos;target/surefire-reports&apos;,
+          reportFiles: &apos;emailable-report.html&apos;,
+          reportName: &apos;API Test Report&apos;,
+          keepAll: true,
+          alwaysLinkToLastBuild: true
+        ])
+      }
+    }
+  }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

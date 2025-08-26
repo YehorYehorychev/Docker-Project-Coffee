@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="3.084" tests="6" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="surefire.suiteXmlFiles" value="testng.xml"/>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.class.path" value="/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/target/test-classes:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/target/classes:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:"/>
+    <property name="java.vm.vendor" value="Debian"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://tracker.debian.org/openjdk-17"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-arm64/lib"/>
+    <property name="sun.java.command" value="/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/target/surefire/surefirebooter-20250826011100866_3.jar /Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/target/surefire 2025-08-26T01-11-00_520-jvmRun1 surefire-20250826011100866_1tmp surefire_0-20250826011100866_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/target/test-classes:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/target/classes:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/testng/testng/7.10.2/testng-7.10.2.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/com/beust/jcommander/1.82/jcommander-1.82.jar:/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="?"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-arm64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/target/surefire/surefirebooter-20250826011100866_3.jar"/>
+    <property name="java.util.logging.config.file" value="/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/target/test-classes/logging.properties"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.16+8-Debian-1deb12u1"/>
+    <property name="user.name" value="?"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.10.14-linuxkit"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile/?/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.debian.org/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.16"/>
+    <property name="user.dir" value="/Users/yehor/IdeaProjects/docker_project_coffee/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="ANSI_X3.4-1968"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/aarch64-linux-gnu/jni:/lib/aarch64-linux-gnu:/usr/lib/aarch64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Debian"/>
+    <property name="java.vm.version" value="17.0.16+8-Debian-1deb12u1"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="createUser_shouldReturn201AndId" classname="org.yehorychev.ReqResApiTests" time="1.157">
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="deleteUser_shouldReturn204" classname="org.yehorychev.ReqResApiTests" time="0.291"/>
+  <testcase name="getSingleUser_shouldContainExpectedEmail" classname="org.yehorychev.ReqResApiTests" time="0.17"/>
+  <testcase name="listUsers_shouldReturnPage2With200" classname="org.yehorychev.ReqResApiTests" time="0.208"/>
+  <testcase name="registerUser_shouldReturnToken" classname="org.yehorychev.ReqResApiTests" time="0.303"/>
+  <testcase name="updateUser_put_shouldUpdateJob" classname="org.yehorychev.ReqResApiTests" time="0.562"/>
+</testsuite>

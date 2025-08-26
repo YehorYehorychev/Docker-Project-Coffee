@@ -1,20 +1,42 @@
 pipeline {
-    agent {
-        docker {
-            image "alpine"
-        }
+  agent {
+    docker {
+      image 'yehory/api_tests_java:2.0'
+      label 'macOS'
+      reuseNode true
+    }
+  }
+
+  options { timestamps() }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git branch: 'main', url: 'https://github.com/YehorYehorychev/Docker-Project-Coffee.git'
+      }
     }
 
-    stages {
-        stage('Get google.com') {
-            steps {
-                sh 'wget www.google.com'
-            }
-        }
+    stage('Run tests') {
+      steps {
+        sh 'mvn -version'
+        sh 'mvn clean test -Dsurefire.suiteXmlFiles=testng.xml'
+      }
     }
-    post {
-        always {
-            archiveArtifacts artifacts: 'index.html', followSymlinks: false
-        }
+
+    stage('Archive & Publish reports') {
+      steps {
+        junit 'target/surefire-reports/TEST-*.xml'
+
+        archiveArtifacts artifacts: 'target/surefire-reports/**', fingerprint: true
+
+        publishHTML(target: [
+          reportDir: 'target/surefire-reports',
+          reportFiles: 'emailable-report.html',
+          reportName: 'API Test Report',
+          keepAll: true,
+          alwaysLinkToLastBuild: true
+        ])
+      }
     }
+  }
 }

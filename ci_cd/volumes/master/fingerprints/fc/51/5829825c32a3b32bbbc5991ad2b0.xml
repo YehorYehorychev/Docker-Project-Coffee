@@ -1,0 +1,17 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<fingerprint>
+  <timestamp>2025-08-26 01:11:04.943 UTC</timestamp>
+  <original>
+    <name>Docker_Java_Jenkinsfile</name>
+    <number>4</number>
+  </original>
+  <md5sum>fc515829825c32a3b32bbbc5991ad2b0</md5sum>
+  <fileName>skipped.png</fileName>
+  <usages>
+    <entry>
+      <string>Docker_Java_Jenkinsfile</string>
+      <ranges>4</ranges>
+    </entry>
+  </usages>
+  <facets/>
+</fingerprint>
