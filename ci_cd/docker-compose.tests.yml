@@ -1,0 +1,5 @@
+name: RestAssuredTests
+
+services:
+  jenkins:
+    image: yehory/api_tests_java:2.0

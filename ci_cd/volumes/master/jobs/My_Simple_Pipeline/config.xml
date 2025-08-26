@@ -1,0 +1,41 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1540.v295eccc9778f">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2265.v140e610fe9d5"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2265.v140e610fe9d5">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description>Sample Pipeline</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4183.v94b_6fd39da_c1">
+    <script>pipeline {
+  agent any
+  options {
+      timeout(time:10, unit: &apos;SECONDS&apos;)
+  }
+  environment {
+    NAME = &apos;Yehor&apos;
+  }
+  stages {
+    stage(&apos;Hello&apos;) {
+      steps {
+        echo &apos;Hello World&apos;
+        echo &quot;Hello World&quot;
+        echo &apos;-------------------&apos;
+        echo &quot;Hello ${env.NAME}&quot;
+        echo &quot;The Build Number is: ${env.BUILD_NUMBER}&quot;
+        echo &quot;The Build URL is: ${env.BUILD_URL}&quot;
+      }
+    }
+  }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
