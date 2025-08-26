@@ -1,5 +1,7 @@
 name: RestAssuredTests
 
 services:
-  jenkins:
+  api-tests:
     image: yehory/api_tests_java:2.0
+    volumes:
+      - ./test-reports:/reports
