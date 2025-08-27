@@ -1,0 +1,9 @@
+services:
+  selenium_hub:
+    image: selenium/hub:latest
+    container_name: selenium_hub_container
+    user: root
+    ports:
+      - "4444:4444"
+      - "4442:4442"
+      - "4443:4443"
