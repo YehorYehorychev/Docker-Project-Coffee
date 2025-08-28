@@ -1,0 +1,31 @@
+services:
+  selenium-hub:
+    image: seleniarm/hub:latest
+    container_name: selenium_hub_container
+    user: root
+    ports:
+      - "4444:4444"
+      - "4442:4442"
+      - "4443:4443"
+  chrome:
+    image: seleniarm/node-chromium:latest
+    shm_size: "2g"
+    depends_on:
+      - selenium-hub
+    deploy:
+      replicas: 3
+    environment:
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_EVENT_BUS_HOST=selenium-hub
+  firefox:
+    image: seleniarm/node-firefox:latest
+    shm_size: "2g"
+    depends_on:
+      - selenium-hub
+#    deploy:
+#      replicas: 3
+    environment:
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_EVENT_BUS_HOST=selenium-hub
