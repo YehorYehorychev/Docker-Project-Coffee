@@ -15,6 +15,15 @@ pipeline {
       }
     }
 
+    stage('Start Selenium Grid') {
+      when { expression { return params.GRID_ENABLED } }
+      steps {
+        echo "Starting Selenium Grid with docker-compose..."
+        sh 'docker compose -f docker-compose.yml up -d'
+        sh 'sleep 10'
+      }
+    }
+
     stage('Run tests') {
       steps {
         sh 'mvn -version'
@@ -33,6 +42,17 @@ pipeline {
           keepAll: true,
           alwaysLinkToLastBuild: true
         ])
+      }
+    }
+  }
+
+  post {
+    always {
+      script {
+        if (params.GRID_ENABLED) {
+          echo "Stopping Selenium Grid..."
+          sh 'docker compose -f docker-compose.yml down'
+        }
       }
     }
   }
