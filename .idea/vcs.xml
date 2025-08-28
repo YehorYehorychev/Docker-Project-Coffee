@@ -5,6 +5,5 @@
     <mapping directory="$PROJECT_DIR$/ci_cd/volumes/node/workspace/Docker_Java_From_Github" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfie" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ci_cd/volumes/node/workspace/Docker_Java_Jenkinsfile" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/selenium" vcs="Git" />
   </component>
 </project>
