@@ -33,14 +33,15 @@ pipeline {
 
     stage('Archive & Publish reports') {
       steps {
-        junit 'target/surefire-reports/TEST-*.xml'
-        archiveArtifacts artifacts: 'target/surefire-reports/**', fingerprint: true
+        archiveArtifacts artifacts: 'target/test-output/*.html', fingerprint: true
+
         publishHTML(target: [
-          reportDir: 'target/surefire-reports',
+          reportDir: 'target/test-output',
           reportFiles: 'emailable-report.html',
-          reportName: 'UI Test Report',
+          reportName: 'TestNG Emailable Report',
           keepAll: true,
-          alwaysLinkToLastBuild: true
+          alwaysLinkToLastBuild: true,
+          allowMissing: false
         ])
       }
     }
