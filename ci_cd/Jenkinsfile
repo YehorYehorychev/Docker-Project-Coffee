@@ -39,7 +39,7 @@ pipeline {
           steps {
             sh '''
               test -f build/index.html
-              npm test
+              npm test -- --ci --reporters=default --reporters=jest-junit
             '''
           }
           post {
@@ -64,11 +64,7 @@ pipeline {
               echo "Server PID=$SERVER_PID"
               sleep 5
 
-              npx playwright test
-
-              rm -rf playwright-report/local
-              mkdir -p playwright-report/local
-              cp -r playwright-report/* playwright-report/local/ || true
+              npx playwright test --reporter=html || true
 
               kill $SERVER_PID
             '''
@@ -79,12 +75,12 @@ pipeline {
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
-                reportDir: 'playwright-report/local',
+                reportDir: 'playwright-report',
                 reportFiles: 'index.html',
                 reportName: 'Playwright - Local Report',
                 useWrapperFileDirectly: false
               ])
-              archiveArtifacts artifacts: 'playwright-report/local/**'
+              archiveArtifacts artifacts: 'playwright-report/**'
             }
           }
         }
@@ -126,11 +122,7 @@ pipeline {
       steps {
         sh '''
           echo "Running E2E tests against staging: $CI_ENVIRONMENT_URL"
-          npx playwright test --project=staging || true
-
-          rm -rf playwright-report/staging
-          mkdir -p playwright-report/staging
-          cp -r playwright-report/* playwright-report/staging/ || true
+          npx playwright test --project=staging --reporter=html || true
         '''
       }
       post {
@@ -139,12 +131,12 @@ pipeline {
             allowMissing: false,
             alwaysLinkToLastBuild: true,
             keepAll: true,
-            reportDir: 'playwright-report/staging',
+            reportDir: 'playwright-report',
             reportFiles: 'index.html',
             reportName: 'Playwright - Staging Report',
             useWrapperFileDirectly: false
           ])
-          archiveArtifacts artifacts: 'playwright-report/staging/**'
+          archiveArtifacts artifacts: 'playwright-report/**'
         }
       }
     }
@@ -160,25 +152,6 @@ pipeline {
     stage('Deploy to Prod') {
       agent {
         docker {
-          image 'node:18-alpine'
-          reuseNode true
-          args '-u root'
-        }
-      }
-      steps {
-        sh '''
-          npm install netlify-cli@20.1.1
-          ./node_modules/.bin/netlify --version
-          echo "Deploying to Production. Site ID: $NETLIFY_SITE_ID"
-          ./node_modules/.bin/netlify status
-          ./node_modules/.bin/netlify deploy --dir=build --prod
-        '''
-      }
-    }
-
-    stage('Post-Deployment E2E Tests') {
-      agent {
-        docker {
           image 'mcr.microsoft.com/playwright:v1.55.0-jammy'
           reuseNode true
           args '-u root'
@@ -189,12 +162,16 @@ pipeline {
       }
       steps {
         sh '''
-          echo "Running E2E tests against production: $CI_ENVIRONMENT_URL"
-          npx playwright test --project=prod || true
+          node --version
+          npm install netlify-cli@20.1.1
+          ./node_modules/.bin/netlify --version
 
-          rm -rf playwright-report/prod
-          mkdir -p playwright-report/prod
-          cp -r playwright-report/* playwright-report/prod/ || true
+          echo "Deploying to Production. Site ID: $NETLIFY_SITE_ID"
+          ./node_modules/.bin/netlify status
+          ./node_modules/.bin/netlify deploy --dir=build --prod
+
+          echo "Running E2E tests against production: $CI_ENVIRONMENT_URL"
+          npx playwright test --reporter=html || true
         '''
       }
       post {
@@ -203,12 +180,12 @@ pipeline {
             allowMissing: false,
             alwaysLinkToLastBuild: true,
             keepAll: true,
-            reportDir: 'playwright-report/prod',
+            reportDir: 'playwright-report',
             reportFiles: 'index.html',
             reportName: 'Playwright - Prod Report',
             useWrapperFileDirectly: false
           ])
-          archiveArtifacts artifacts: 'playwright-report/prod/**'
+          archiveArtifacts artifacts: 'playwright-report/**'
         }
       }
     }
