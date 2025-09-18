@@ -4,6 +4,7 @@ pipeline {
   environment {
     NETLIFY_SITE_ID = 'c9bf685c-a128-49ab-bb82-701e368414a4'
     NETLIFY_AUTH_TOKEN = credentials('netlify_token')
+    REACT_APP_VERSION = "1.0.$BUILD_ID"
   }
 
   stages {
@@ -120,14 +121,6 @@ pipeline {
             useWrapperFileDirectly: false
           ])
           archiveArtifacts artifacts: 'playwright-report/**'
-        }
-      }
-    }
-
-    stage('Approval') {
-      steps {
-        timeout(time: 15, unit: 'MINUTES') {
-          input message: 'Do you wish to deploy to production?', ok: 'Yes, I am sure!'
         }
       }
     }
