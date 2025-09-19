@@ -8,6 +8,13 @@ pipeline {
   }
 
   stages {
+
+    stage('Docker') {
+      steps {
+        sh 'docker build -t playwright-jammy .'
+      }
+    }
+
     stage('Build') {
       agent {
         docker {
@@ -51,14 +58,14 @@ pipeline {
     stage('E2E Tests - Local') {
       agent {
         docker {
-          image 'mcr.microsoft.com/playwright:v1.55.0-jammy'
+          image 'playwright-jammy'
           reuseNode true
           args '-u root'
         }
       }
       steps {
         sh '''
-          ./node_modules/.bin/serve -s build -l 3000 &
+          serve -s build -l 3000 &
           SERVER_PID=$!
           echo "Server PID=$SERVER_PID"
           sleep 5
@@ -87,20 +94,19 @@ pipeline {
     stage('Deploy & E2E Tests - Staging') {
       agent {
         docker {
-          image 'mcr.microsoft.com/playwright:v1.55.0-jammy'
+          image 'playwright-jammy'
           reuseNode true
           args '-u root'
         }
       }
       steps {
         sh '''
-          npm install netlify-cli@20.1.1 node-jq
-          ./node_modules/.bin/netlify --version
+          netlify --version
 
           echo "Deploying to Staging. Site ID: $NETLIFY_SITE_ID"
-          ./node_modules/.bin/netlify status
-          ./node_modules/.bin/netlify deploy --dir=build --json > deploy-output.json
-          ./node_modules/.bin/node-jq -r '.deploy_url' deploy-output.json > staging_url.txt
+          netlify status
+          netlify deploy --dir=build --json > deploy-output.json
+          node-jq -r '.deploy_url' deploy-output.json > staging_url.txt
 
           STAGING_URL=$(cat staging_url.txt)
           echo "Staging deployed at: $STAGING_URL"
@@ -128,7 +134,7 @@ pipeline {
     stage('Deploy & E2E Tests - Prod') {
       agent {
         docker {
-          image 'mcr.microsoft.com/playwright:v1.55.0-jammy'
+          image 'playwright-jammy'
           reuseNode true
           args '-u root'
         }
@@ -139,12 +145,11 @@ pipeline {
       steps {
         sh '''
           node --version
-          npm install netlify-cli@20.1.1
-          ./node_modules/.bin/netlify --version
+          netlify --version
 
           echo "Deploying to Production. Site ID: $NETLIFY_SITE_ID"
-          ./node_modules/.bin/netlify status
-          ./node_modules/.bin/netlify deploy --dir=build --prod
+          netlify status
+          netlify deploy --dir=build --prod
 
           echo "Running E2E tests against production: $CI_ENVIRONMENT_URL"
           npx playwright test --reporter=html || true
