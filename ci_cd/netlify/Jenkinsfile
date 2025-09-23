@@ -22,6 +22,8 @@ pipeline {
           sh '''
             aws --version
             aws s3 ls
+            echo "S3 Bucket" > index.html
+            aws s3 cp index.html s3://jenkins-app-20250922/index.html
           '''
         }
       }
