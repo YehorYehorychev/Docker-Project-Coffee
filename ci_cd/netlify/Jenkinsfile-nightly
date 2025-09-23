@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t playwright-jammy .'
+        sh 'docker build -f ci/Dockerfile_Nginx -t playwright-jammy .'
       }
     }
   }
