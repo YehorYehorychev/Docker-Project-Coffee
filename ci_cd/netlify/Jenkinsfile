@@ -9,6 +9,29 @@ pipeline {
 
   stages {
 
+    stage('AWS Setup') {
+      agent {
+        docker {
+          image 'amazon/aws-cli:latest'
+          reuseNode true
+          args "--entrypoint=''"
+        }
+      }
+      environment {
+        AWS_S3_BUCKET = 'jenkins-app-20250922'
+      }
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'aws-s3', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
+          sh '''
+            aws --version
+            aws s3 ls
+            echo "S3 Bucket" > index.html
+            aws s3 cp index.html s3://$AWS_S3_BUCKET/index.html
+          '''
+        }
+      }
+    }
+
     stage('Build') {
       agent {
         docker {
